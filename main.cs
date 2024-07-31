@@ -37,7 +37,8 @@ public class Plugin : BasePlugin
             return;
         }
 
-        var messageInput = command.ArgByIndex(2);
+        var args = command.ArgString.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        var messageInput = string.Join(" ", args.Skip(1));
         if (string.IsNullOrEmpty(messageInput))
         {
             command.ReplyToCommand(Prefix + "no message arg");
@@ -75,7 +76,8 @@ public class Plugin : BasePlugin
             return;
         }
 
-        var messageInput = command.ArgByIndex(1);
+        var args = command.ArgString.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        var messageInput = string.Join(" ", args.Skip(0));
 
         foreach (var target in Utilities.GetPlayers())
         {
