@@ -1,5 +1,5 @@
 # cs2-force-say
-**plugin can force players to write in chat**
+**force players to write in chat**
 
 <br>
 
