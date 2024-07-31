@@ -1,5 +1,6 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Modules.Admin;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Utils;
 
@@ -22,6 +23,7 @@ public class Plugin : BasePlugin
         RemoveCommand($"css_ForceSayAll", Command_ForceSayAll!);
     }
 
+    [RequiresPermissions("@css/ban")]
     public void Command_ForceSay(CCSPlayerController player, CommandInfo command)
     {
         if (string.IsNullOrEmpty(command.ArgString))
@@ -68,6 +70,7 @@ public class Plugin : BasePlugin
         else command.ReplyToCommand(Prefix + "target not found");
     }
 
+    [RequiresPermissions("@css/ban")]
     public void Command_ForceSayAll(CCSPlayerController player, CommandInfo command)
     {
         if (string.IsNullOrEmpty(command.ArgString))
