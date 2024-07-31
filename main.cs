@@ -71,16 +71,11 @@ public class Plugin : BasePlugin
     {
         if (string.IsNullOrEmpty(command.ArgString))
         {
-            command.ReplyToCommand(Prefix + "no args");
+            command.ReplyToCommand(Prefix + "no message arg");
             return;
         }
 
         var messageInput = command.ArgByIndex(1);
-        if (string.IsNullOrEmpty(messageInput))
-        {
-            command.ReplyToCommand(Prefix + "no message arg");
-            return;
-        }
 
         foreach (var target in Utilities.GetPlayers())
         {
